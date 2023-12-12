@@ -1,0 +1,52 @@
+using DG.Tweening;
+using Manager;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class EffectSound : PoolAble
+{
+    AudioSource audioSource;
+    private float timer = 0;
+   
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (audioSource.clip != null && timer > audioSource.clip.length)
+        {
+            ReleaseObject();
+            timer = 0;
+        }
+    }
+
+    public void Initialized(Data.SoundType soundType, bool posCheck)
+    {   
+        audioSource.clip = Resources.Load<AudioClip>(Managers.Sound.GetSoundType(soundType));     
+        if (Managers.Sound.isOnOffEffectSound && Managers.Sound.isOnOffMasterSound)
+        {
+            audioSource.volume = PreferencesManager.GetEffectVolume() * PreferencesManager.GetMasterVolume();
+        }
+        else
+        {
+            audioSource.volume = 0;
+        }
+
+        audioSource.Play();   
+    
+        if (posCheck)
+        {
+            audioSource.spatialBlend = 1f;           
+        }        
+        else
+        {
+            audioSource.spatialBlend = 0f;
+        }
+    }
+}
