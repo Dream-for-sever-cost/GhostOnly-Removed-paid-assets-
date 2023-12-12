@@ -6,20 +6,20 @@
 ---
 ### 목차
 
-1. [**게임 개요**] (https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#1-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EC%9A%94)
-2. [**게임 설명서**] (https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#2-%EA%B2%8C%EC%9E%84-%EC%84%A4%EB%AA%85%EC%84%9C-)
-3. [**팀원 소개 및 개발 기간**] (https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#3-%ED%8C%80%EC%9B%90-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EA%B0%84-)
-4. [**기능별 클래스 설명**] (https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#4-%EA%B8%B0%EB%8A%A5%EB%B3%84-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%84%A4%EB%AA%85-)
-5. [**사용한 기술 목록**] (https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#5-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B8%B0%EC%88%A0-%EB%AA%A9%EB%A1%9D-)
-6. [**라이선스**] (https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#6-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-)
+1. [**게임 개요**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#1-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EC%9A%94)
+2. [**게임 설명서**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#2-%EA%B2%8C%EC%9E%84-%EC%84%A4%EB%AA%85%EC%84%9C-)
+3. [**팀원 소개 및 개발 기간**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#3-%ED%8C%80%EC%9B%90-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EA%B0%84-)
+4. [**기능별 클래스 설명**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#4-%EA%B8%B0%EB%8A%A5%EB%B3%84-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%84%A4%EB%AA%85-)
+5. [**사용한 기술 목록**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#5-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B8%B0%EC%88%A0-%EB%AA%A9%EB%A1%9D-)
+6. [**라이선스**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#6-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-)
 
 ---
 
 # 1. 게임 개요
 
 ### 게임 제목: GhostOnly
-
-[https://www.youtube.com/watch?v=80ByDIkzFlA](https://www.youtube.com/watch?v=80ByDIkzFlA)
+**🎥이미지를 누르면 홍보 영상으로 이동합니다.🎥**
+[![Video Label](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/main.png)](https://www.youtube.com/watch?v=80ByDIkzFlA)
 
 ### 장르 : 실시간 전략 디펜스 (싱글 플레이)
 
@@ -45,71 +45,63 @@
  
 # 2. 게임 설명서 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
-👻 **빙의 및 이동**
+### 👻 빙의 및 이동
 
  유령 상태에선 장비를 잡을 수 없으니 해골에 빙의해 해골을 조종하세요.
 
-![빙의및이동.gif](README/Move.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Move.gif" width="400" height="250"/>
 
-🏦 **제단** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+### 🏦 제단 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
 수확한 영혼을 제단에 바치세요. 영혼 10개를 바치면 제단 1칸을 채울 수 있습니다.
 
 제단에 영혼을 모두 채워 고대 악마를 부활시켜 주세요.
 
-![제단.gif](README/Altar.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Altar.gif" width="400" height="250"/>
 
-🪦 **묘비 (영혼 캐치)** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+### 🪦 묘비 (영혼 캐치) [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
 움직이는 영혼을 정확한 위치에서 수확해 더 많은 양의 영혼을 모으세요.
 
-![스타캐치.gif](README/Tombstone.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Tombstone.gif" width="400" height="250"/>
 
-⚰️ **관 (상점)** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+### ⚰️ 관 (상점) [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
 관에 영혼을 투자하고 해골과 새로운 장비를 발굴하세요.
 
-![관(상점).gif](README/Coffin.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Coffin.gif" width="400" height="250"/>
 
-📚 **마도서** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+### 📚 마도서 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
 영혼을 투자해 흑마법을 배우며 강해지세요.
 
-![마도서.gif](README/SpellBook.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/SpellBook.gif" width="400" height="250"/>
 
-⚔️ **전투** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+### ⚔️ 전투 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
 낮에 쳐들어오는 영웅들이 제단에 있는 영혼을 가져가지 못하게 막으세요!
 
-![전투1_3.gif](README/Combat1.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Combat1.gif" width="400" height="250"/> <img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Combat2.gif" width="400" height="250"/>
 
-![전투 4~5.gif](README/Combat2.gif)
-
-**🏋️ 특성** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+### 🏋️ 특성 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
  
 해골도 생전에 영웅이였습니다. 
 
 각 해골의 장비 숙련도를 높여 강화하고 과거의 기억을 되찾아 더 강해지세요.
 
-![특성.gif](README/Mastery.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Mastery.gif" width="400" height="250"/>
 
-**🪄 스킬 효과** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+### 🪄 스킬 효과 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
 특성마다 스킬 효과를 가지고 있습니다. 
 
 각기 다른 효과를 가진 스킬을 얻어 강해지세요.
 
-![이펙트1(스태틱).gif](README/Skill1.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Skill1.gif" width="400" height="250"/> <img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Skill2.gif" width="400" height="250"/>
 
-![이펙트2.gif](README/Skill2.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Skill3.gif" width="400" height="250"/> <img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Skill4.gif" width="400" height="250"/>
 
-![이펙트3(얼심).gif](README/Skill3.gif)
-
-![이펙트4(무대).gif](README/Skill4.gif)
-
-![이펙트5(구인수).gif](README/Skill5.gif)
-
-![이펙트6(태불방).gif](README/Skill6.gif)
+<img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Skill5.gif" width="400" height="250"/> <img src="https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-/blob/main/ReadMe/Skill6.gif" width="400" height="250"/>
 
 ---
 
