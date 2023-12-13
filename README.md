@@ -9,9 +9,8 @@
 1. [**게임 개요**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#1-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EC%9A%94)
 2. [**게임 설명서**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#2-%EA%B2%8C%EC%9E%84-%EC%84%A4%EB%AA%85%EC%84%9C-)
 3. [**팀원 소개 및 개발 기간**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#3-%ED%8C%80%EC%9B%90-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EA%B0%84-)
-4. [**기능별 클래스 설명**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#4-%EA%B8%B0%EB%8A%A5%EB%B3%84-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%84%A4%EB%AA%85-)
-5. [**사용한 기술 목록**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#5-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B8%B0%EC%88%A0-%EB%AA%A9%EB%A1%9D-)
-6. [**라이선스**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#6-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-)
+4. [**사용한 기술 목록**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#5-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B8%B0%EC%88%A0-%EB%AA%A9%EB%A1%9D-)
+5. [**라이선스**](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#6-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-)
 
 ---
 
@@ -131,107 +130,7 @@
 
 ---
 
-# 4. 기능별 클래스 설명 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-
-- 🌐 **Util** 
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- 🖱️ **UI** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    | UI_Base |  |
-    | UI_Popup |  |
-  
-- 💽 **데이터 관리** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- **🇺🇲 국제화(I18n)** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- 🤖 **상태머신** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- 👻 **유령(플레이어)** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- 💀 **해골** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- 🦸 **영웅** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-
-- ⚔️ **장비(무기)** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- 🏛️ **제단** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- 🪦 **묘비** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- 📜 **마도서(연구소)** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- ⚰️ **관(상점)** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- ‼️ **특성** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- ❓ **튜토리얼** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-  
-- ⚙️ **설정** [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
-    | 클래스명 | 설명 |
-    | --- | --- |
-    |  |  |
-    |  |  |
-
----
-
-# 5. 사용한 기술 목록 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+# 4. 사용한 기술 목록 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
 - **프레임 워크 & 언어**
     - .Net 2.0
@@ -253,7 +152,7 @@
     - piskel
 ---
 
-# 6. 라이선스 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
+# 5. 라이선스 [🔝](https://github.com/Dream-for-sever-cost/GhostOnly-Removed-paid-assets-#%EB%AA%A9%EC%B0%A8)
 
 - **UI Particle**
     - [show-homepage](https://openupm.com/packages/com.coffee.ui-particle/#usage)
