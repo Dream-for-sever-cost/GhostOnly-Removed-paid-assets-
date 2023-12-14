@@ -110,7 +110,7 @@
 | 팀원명 | 담당 기능 | GitHub | Blog |
 | --- | --- | --- | --- |
 |윤지연(리더)| 게임UI, 국제화, 버전 관리, 데이터 암호화, 시간 흐름, 마도서, 관:상점 | https://github.com/jungbosong | https://while0night.tistory.com/ |
-|김민상(부리더)| 애니메이션, 디자인, 게임UI, 시간흐름, 상호작용, 제단, 유령(플레이어), 해골, 영웅-침입, 장비, 게임 목표(로직), InputAciton | https://github.com/berylstar | https://velog.io/@berylstar |
+|김민상(부리더)| 애니메이션, 디자인, 게임UI, 시간흐름, 상호작용, 제단, 유령(플레이어), 해골, 영웅, 장비, 게임 목표(로직), InputAciton | https://github.com/berylstar | https://velog.io/@berylstar |
 |강성호| 인트로, 게임 결과창, 사운드, 묘비: 영혼 수확, 장비, 미니맵, DOTween, 게임 목표(로직) | https://github.com/tjdgh7419 | https://tjdgh7419.tistory.com/ |
 |김대열| 로비, 설정, 국제화, 버전 관리, 시간 흐름, 사운드, 해골, 해골-특성, 해골-자동화, 해골-상태창 | https://github.com/Kim-dae-yeol?tab=repositories | https://velog.io/@elmo7180 |
 |조범준| 로비, 설정, 튜토리얼, 사운드, 영웅, 유령의 영지, DOTween, NavMesh | https://github.com/KimMaYa1 | https://beomjun-develop.tistory.com/ |
