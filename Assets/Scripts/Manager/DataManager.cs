@@ -82,6 +82,7 @@ public class DataManager
     {
         //todo refactoring this method 
         TextAsset stringAsset = Resources.Load<TextAsset>("Data/JsonData/string");
+        //string decryptedString = AES.AES.Decrypt(stringAsset.text);
         JsonDataList<string, I18nData>
             jsonData = JsonUtility.FromJson<JsonDataList<string, I18nData>>(stringAsset.text);
         foreach (DataComponent<string, I18nData> dataComponent in jsonData.data)
@@ -108,7 +109,7 @@ public class DataManager
         {
             Debug.Log("startLoadJson");
             string folderPath = DownloadJsonApi.DownloadPath;
-            string filePath = $"{folderPath}{path}.json";
+            string filePath = $"{folderPath}{path}.txt";
 
             Debug.Log($"filePath :{filePath}");
             FileStream fs = File.Open(filePath, FileMode.Open);
@@ -117,6 +118,7 @@ public class DataManager
             {
                 string jsonString = reader.ReadToEnd();
                 Debug.Log($"loadJson : {jsonString}");
+                jsonString = AES.AES.Decrypt(jsonString);
                 JsonDataList<TKey, TValue> result = JsonUtility.FromJson<JsonDataList<TKey, TValue>>(jsonString);
                 Dictionary<TKey, TValue> dictionary = new Dictionary<TKey, TValue>();
                 foreach (DataComponent<TKey, TValue> data in result.data)

@@ -1,8 +1,6 @@
 using System;
-using System.IO;
 using System.Text;
 using System.Security.Cryptography;
-using UnityEngine;
 
 // 출처
 // https://intro0517.tistory.com/37
@@ -12,17 +10,6 @@ namespace AES
     public class AES
     {
         const string KEY = "DreamPayingServer";
-
-        /*void Start()
-        {
-            string originalText = Managers.Resource.Load<TextAsset>($"Data/JsonData/CoffinData").ToString();
-            string en = Encrypt(originalText);
-            string de = Decrypt(en);
-
-            Debug.Log($"Original Text is {originalText}");
-            Debug.Log($"Encrypted Text is {en}");
-            Debug.Log($"Decrypted Text is {de}");
-        }*/
 
         public static string Decrypt(string textToDecrypt)
         {

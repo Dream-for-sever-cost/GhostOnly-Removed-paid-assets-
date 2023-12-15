@@ -164,36 +164,4 @@ public sealed class BossStateMachine : StateMachine<BossBaseState.EBossState>, I
             return action.Range > (Target.position - transform.position).magnitude;
         }
     }
-
-    //public void SetIsAttack()
-    //{
-    //    if (Target == null)
-    //    {
-    //        IsAttack = false;
-    //    }
-    //    else if (!Attack.Able)
-    //    {
-    //        IsAttack = false;
-    //    }
-    //    else
-    //    {
-    //        IsAttack = Attack.Range > (Target.position - transform.position).magnitude;
-    //    }
-    //}
-
-    //public void SetIsSkill()
-    //{
-    //    if (Target == null)
-    //    {
-    //        IsSkill = false;
-    //    }
-    //    else if (!Skill.Able)
-    //    {
-    //        IsSkill = false;
-    //    }
-    //    else
-    //    {
-    //        IsSkill = Skill.Range > (Target.position - transform.position).magnitude;
-    //    }
-    //}
 }

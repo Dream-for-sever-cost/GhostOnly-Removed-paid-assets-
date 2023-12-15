@@ -260,9 +260,10 @@ public static class DownloadJsonApi
                 .Select(value => new DataComponent<TK, TV> { key = keyFunction(value), value = value })
                 .ToList()
         };
-        string downloadPath = $"{DownloadPath}{file}.json";
+        string downloadPath = $"{DownloadPath}{file}.txt";
         string jsonString = JsonUtility.ToJson(result, true);
         Debug.Log($"json is :{jsonString}");
+        jsonString = AES.AES.Encrypt(jsonString);
         File.WriteAllText(downloadPath, jsonString, Encoding.UTF8);
         Debug.Log("download complete");
     }

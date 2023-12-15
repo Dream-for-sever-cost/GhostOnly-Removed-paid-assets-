@@ -5,9 +5,6 @@ using Util;
 public class SpellBookController : MonoBehaviour
 {
     private InteractNPC _interact;
-    private UI_SpellBook _ui;
-    public event Action OnUnlockedSpell;
-    public event Action OnActivatedSpell;
 
     private void Awake()
     {
@@ -21,7 +18,7 @@ public class SpellBookController : MonoBehaviour
 
     public void ShowSpellBookPopup()
     {
-        _ui = Managers.UI.ShowPopupUI<UI_SpellBook>();
+        Managers.UI.ShowPopupUI<UI_SpellBook>();
         Time.timeScale = 0;
         Managers.Sound.PlaySound(Data.SoundType.Interaction);
     }
@@ -94,5 +91,12 @@ public class SpellBookController : MonoBehaviour
     {
         Managers.GameManager.gravestoneRespawnTimeCoefficient += Managers.SpellBook.effect;
         CancelInvoke(Constants.Spellbook.ReduceGravestoneRespawnTime);
+    }
+
+    // 영혼 획득량 증가
+    private void IncreaseSoulYield()
+    {
+        Managers.GameManager.soulYield += Managers.SpellBook.effect;
+        CancelInvoke(Constants.Spellbook.IncreaseSoulYield);
     }
 }

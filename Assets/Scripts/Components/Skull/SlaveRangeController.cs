@@ -6,7 +6,6 @@ public class SlaveRangeController : MonoBehaviour
     public event Action<GameObject> OnFindTargetEvent;
     public event Action OnDisappearTargetEvent;
     private SkullStateMachine _stateMachine;
-    private bool _isEquipped = false;
 
     private void Awake()
     {

@@ -53,7 +53,7 @@ public class UI_Result : UI_Popup
         GetText((int)Texts.ResultText).text = Managers.GameManager.isGameClear ? Constants.Setting.GameClear : Constants.Setting.GameOver;
         GetText((int)Texts.SoulText).text = Managers.Soul.EarnedSoul.ToString();
         GetText((int)Texts.DayText).text = Managers.GameManager.currentDay.ToString();
-        GetText((int)Texts.PlayTimeText).text = $"{(int)(Managers.GameManager.realTime / 60)} : {(int)(Managers.GameManager.realTime % 60)}";
+        GetText((int)Texts.PlayTimeText).text = $"{(int)(Managers.GameManager.realTime / 60)} : {(int)(Managers.GameManager.realTime % 60):D2}";
         GetText((int)Texts.HeroDefeatText).text = Managers.GameManager.heroDeathCount.ToString();
     }
 

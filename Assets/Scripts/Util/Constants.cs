@@ -22,6 +22,7 @@ namespace Util
             public const string Skull = "Prefabs/Skull/Skull";
             public const string MinimapCamera = "Prefabs/Minimap/MinimapCamera";
             public const string AppliedEffectItem = "Prefabs/UI/SubItem/AppliedEffectItem";
+            public const string SpellBook = "Prefabs/Etc/SpellBook";
         }
 
         public static class Sprites
@@ -231,8 +232,7 @@ namespace Util
 
             #endregion
 
-            public const int ChanceEnd = 10;
-            public const int Chance = 2;
+            public const int Chance = 20;
 
             public const float EasyStarSpeed = 0.8f;
             public const int EasySuccessReward = 5;
@@ -247,11 +247,12 @@ namespace Util
             public const int HardFailReward = 0;
 
             public const float SkillStarSpeed = 0.4f;
-            public const int SkillSuccessPlusReward = 20;
+            public const int SkillSuccessPlusReward = 15;
             public const int SkillSuccessReward = 8;
             public const int SkillFailReward = 0;
 
             public const float ClosePopupTime = 1f;
+            public static Color EasyStarcatchColor = new Color(238 / 255f, 248 / 255f, 255 / 255f);
             public static Color NormalStarcatchColor = new Color(222 / 255f, 134 / 255f, 248 / 255f);
             public static Color HardStarcatchColor = new Color(252 / 255f, 253 / 255f, 118 / 255f);
             public static Color SkillStarcatchColor = new Color(139 / 255f, 245 / 255f, 108 / 255f);
@@ -341,6 +342,7 @@ namespace Util
             public const string IncreaseSkullMoveSpeed = "IncreaseSkullMoveSpeed";
             public const string IncreaseGhostMoveSpeed = "IncreaseGhostMoveSpeed";
             public const string ReduceGravestoneRespawnTime = "ReduceGravestoneRespawnTime";
+            public const string IncreaseSoulYield = "IncreaseSoulYield";
         }
 
         public static class MasteryAnimation

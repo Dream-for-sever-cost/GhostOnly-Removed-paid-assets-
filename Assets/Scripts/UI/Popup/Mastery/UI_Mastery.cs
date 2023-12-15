@@ -166,7 +166,7 @@ public sealed class UI_Mastery : UI_Popup
         //GetText((int)MasteryTexts.TitleText).text = GetString(Constants.StringRes.ResIdStatus);
         //GetText((int)MasteryTexts.Status).text = GetString(Constants.StringRes.ResIdAbility);
         //GetText((int)MasteryTexts.Mastery).text = GetString(Constants.StringRes.ResIdMastery);
-
+        DOTween.KillAll();
         GetButton((int)MasteryButtons.MainOpenButton).gameObject.SetActive(!_isMainOpened);
         GetButton((int)MasteryButtons.SubOpenButton).gameObject.SetActive(!_isSubOpened);
         GetImage((int)MasteryImages.MainMasteryBorderImage).gameObject.SetActive(_isMainOpened);
@@ -455,7 +455,7 @@ public sealed class UI_Mastery : UI_Popup
         }
         else
         {
-            if (!_isMainOpened)
+            if (!_isMainOpened) 
             {
                 MainOpenButtonSequence();
                 GetText((int)MasteryTexts.MainMasteryNameText).text = "OPEN !";

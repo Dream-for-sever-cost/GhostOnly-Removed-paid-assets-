@@ -1,7 +1,4 @@
 using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
@@ -21,6 +18,8 @@ public class UI_StarCatch : UI_Popup
     private Sequence _releaseSoulSequence;
     private Sequence _lampFailSequence;
 
+    private bool isCritical = false;
+
     #region enum
     enum Images
     {
@@ -30,6 +29,8 @@ public class UI_StarCatch : UI_Popup
         StarCatchDifficultyBGImage,
         Soul1Image,
         Soul2Image,
+        Soul3Image,
+        Soul4Image,
     }
 
     enum Texts
@@ -96,10 +97,11 @@ public class UI_StarCatch : UI_Popup
         {           
             SuccessRewardSequence();
             SuccessLampSequence();
-            Managers.Soul.GetSoul(_successReward);   
+            Managers.Soul.GetSoul(_successReward + (int)Managers.GameManager.soulYield);
+            Debug.Log((_successReward, (int)Managers.GameManager.soulYield));
             clickButton.interactable = false;
             GetObject((int)GameObjects.Reward).SetActive(true);
-            RewardSet(_successReward);
+            RewardSet(_successReward + (int)Managers.GameManager.soulYield);
             DOVirtual.DelayedCall(Constants.Starcatch.ClosePopupTime, Close).SetUpdate(true);       
             Managers.Sound.PlaySound(Data.SoundType.StarcatchSuccess);
         }
@@ -123,19 +125,22 @@ public class UI_StarCatch : UI_Popup
     }
 
     private void SetEasy()
-    {
-
+    {     
+        GetImage((int)Images.Soul2Image).gameObject.SetActive(false);
+        GetImage((int)Images.Soul3Image).gameObject.SetActive(false);
+        GetImage((int)Images.Soul4Image).gameObject.SetActive(false);
     }
 
     private void SetNormal()
-    {
-
+    {      
+        GetImage((int)Images.Soul3Image).gameObject.SetActive(false);
+        GetImage((int)Images.Soul4Image).gameObject.SetActive(false);
         GetImage((int)Images.StarCatchDifficultyBGImage).color = Constants.Starcatch.NormalStarcatchColor;
     }
 
     private void SetHard()
-    {
-
+    {      
+        GetImage((int)Images.Soul4Image).gameObject.SetActive(false);
         GetImage((int)Images.StarCatchDifficultyBGImage).color = Constants.Starcatch.HardStarcatchColor;
     }
 
@@ -147,11 +152,18 @@ public class UI_StarCatch : UI_Popup
     private void RewardSet(int soul)
     {
         GetObject((int)GameObjects.Reward).SetActive(true);
-        GetText((int)Texts.SoulText).text = $"+{soul}";
+        GetText((int)Texts.SoulText).text = $"+ {soul}";
+
+        if (isCritical)
+        {
+            GetText((int)Texts.SoulText).color = Color.yellow;
+        }
     }
 
     public void Initialized(int difficulty)
     {
+        isCritical = false;
+
         switch (difficulty)
         {
             case 0:
@@ -175,10 +187,10 @@ public class UI_StarCatch : UI_Popup
             case 3:
                 this._difficulty = difficulty;
                 _starSpeed = Constants.Starcatch.SkillStarSpeed;
-                int chance = UnityEngine.Random.Range(0, Constants.Starcatch.ChanceEnd);
-                if (chance < Constants.Starcatch.Chance)
+                if (Random.Range(0, 100) < Constants.Starcatch.Chance)
                 {
                     _successReward = Constants.Starcatch.SkillSuccessPlusReward;
+                    isCritical = true;
                 }
                 else
                 {
@@ -255,14 +267,19 @@ public class UI_StarCatch : UI_Popup
     {
         GameObject soul1 = GetImage((int)Images.Soul1Image).gameObject;
         GameObject soul2 = GetImage((int)Images.Soul2Image).gameObject;
+        GameObject soul3 = GetImage((int)Images.Soul3Image).gameObject;
+        GameObject soul4 = GetImage((int)Images.Soul4Image).gameObject;
 
         _soulSequence = DOTween.Sequence()
             .Prepend(soul1.transform.DOLocalMoveY(Constants.Starcatch.Soul1PrependMoveY, 1f))
             .Join(soul2.transform.DOLocalMoveY(Constants.Starcatch.Soul2JoinMoveY, 1f))
-            .SetEase(Ease.InOutSine)
+            .Join(soul3.transform.DOLocalMoveY(Constants.Starcatch.Soul1PrependMoveY, 1f))
+            .Join(soul4.transform.DOLocalMoveY(Constants.Starcatch.Soul2JoinMoveY, 1f))
             .Append(soul1.transform.DOLocalMoveY(Constants.Starcatch.Soul1AppendMoveY, 1f))
             .Join(soul2.transform.DOLocalMoveY(Constants.Starcatch.Soul2JoinMoveY2, 1f))
-            .SetEase(Ease.InOutSine)
+            .Join(soul3.transform.DOLocalMoveY(Constants.Starcatch.Soul1AppendMoveY, 1f))
+            .Join(soul4.transform.DOLocalMoveY(Constants.Starcatch.Soul2JoinMoveY2, 1f))
+            .SetEase(Ease.Linear)
             .SetLoops(-1)
             .SetRelative()
             .SetUpdate(true);

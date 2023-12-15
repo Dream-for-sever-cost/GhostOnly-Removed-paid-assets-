@@ -3,7 +3,6 @@ using Manager;
 using System;
 using StateMachine.Slave;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using Util;
 
@@ -41,10 +40,7 @@ public sealed class SkullStateMachine : StateMachine<SkullBaseState.ESkullState>
 
     public bool isLamper = false;
 
-    private bool _isControlling = false;
-
     private float _timeSinceLastDamaged = 0f;
-    private float _damageTime = 0.5f;
     //===============================================================
 
     private static readonly int Idle = Animator.StringToHash("Idle");
@@ -53,10 +49,6 @@ public sealed class SkullStateMachine : StateMachine<SkullBaseState.ESkullState>
     private static readonly int Move = Animator.StringToHash("Move");
     private static readonly int Hit = Animator.StringToHash("Hit");
     private bool _isReady = false;
-
-
-    private static float[] _deltaOffsetX = { 0.5f, 0.5f, -0.5f, -0.5f };
-    private static float[] _deltaOffsetY = { 0.5f, -0.5f, 0.5f, -0.5f };
 
     protected override void Awake()
     {
@@ -135,7 +127,6 @@ public sealed class SkullStateMachine : StateMachine<SkullBaseState.ESkullState>
     public void ReleaseSlave()
     {
         Walls.Clear();
-        _isControlling = false;
         Target = null;
         Animator.SetTrigger(Idle);
 
@@ -157,8 +148,6 @@ public sealed class SkullStateMachine : StateMachine<SkullBaseState.ESkullState>
 
     public void ControlSlave()
     {
-        _isControlling = true;
-
         //todo make event
         Managers.Target.RemoveSlave(transform);
     }

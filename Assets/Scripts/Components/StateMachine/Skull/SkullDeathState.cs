@@ -4,7 +4,6 @@ namespace StateMachine.Slave
 {
     public class SkullDeathState : SkullBaseState
     {
-        private float _lastTime = 0f;
 
         public SkullDeathState(SkullStateMachine sm) : base(sm)
         {

@@ -111,13 +111,7 @@ namespace Data
     #endregion
 
     #region Mastery
-
-    [System.Serializable]
-    public class MasteryDataLoader
-    {
-        public Dictionary<string, MasteryDataEntry> dataDic = new Dictionary<string, MasteryDataEntry>();
-    }
-
+    
     [Serializable]
     public class MasteryDataEntry
     {
@@ -194,13 +188,7 @@ namespace Data
         public string soundName;
         public string soundPath;
     }
-
-    [System.Serializable]
-    public class SoundDataLoader
-    {
-        public Dictionary<string, SoundData> dataDic = new Dictionary<string, SoundData>();
-    }
-
+    
     public enum SoundType
     {
         SwordAction,
@@ -248,6 +236,7 @@ namespace Data
         IntroBGM,
         Morning,
         CreditBGM,
+        GetSpell,
     }
 
     #endregion
@@ -296,13 +285,7 @@ namespace Data
         public string wave;
         public List<Road> roads = new List<Road>();
     }
-
-    [Serializable]
-    public class WaveDataLoader
-    {
-        public Dictionary<int, JsonWaveData> dataDic = new Dictionary<int, JsonWaveData>();
-    }
-
+    
     [Serializable]
     public class Road
     {
@@ -377,13 +360,7 @@ namespace Data
         public bool isLocked = false;
         public bool isActivated = false;
     }
-
-    [System.Serializable]
-    public class SpellDataLoader
-    {
-        public Dictionary<string, SpellData> dataDic = new Dictionary<string, SpellData>();
-    }
-
+    
     public enum SpellType
     {
         IncreaseSkullEnergyRecoverySpeed,
@@ -393,15 +370,7 @@ namespace Data
         IncreaseSkullMoveSpeed,
         IncreaseGhostMoveSpeed,
         ReduceGravestoneRespawnTime,
-    }
-
-    #endregion
-
-    #region OnHit
-
-    public class OnHitDataLoader
-    {
-        public Dictionary<string, OnHit> dataDic = new Dictionary<string, OnHit>();
+        IncreaseSoulYield,
     }
 
     #endregion
@@ -417,13 +386,7 @@ namespace Data
         public int price;
         public string explanation;
     }
-
-    [System.Serializable]
-    public class CoffinDataLoader
-    {
-        public Dictionary<string, CoffinData> dataDic = new Dictionary<string, CoffinData>();
-    }
-
+    
     public enum CoffinType
     {
         Skull,
@@ -441,10 +404,6 @@ namespace Data
         public string CreatedDate;
         public string BuildVersion;
         public string VersionDataRange;
-
-        public VersionResponseBody()
-        {
-        }
     }
 
     class VersionDataResponseBody
@@ -454,10 +413,6 @@ namespace Data
         public string Range;
         public string TestSheetId;
         public string TestRange;
-
-        public VersionDataResponseBody()
-        {
-        }
     }
 
     #endregion

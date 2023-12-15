@@ -11,6 +11,7 @@ public class UI_Lobby : UI_Scene
         StartButton,
         SettingButton,
         QuitButton,
+        CreditButton,
     }
 
     enum Texts
@@ -33,6 +34,7 @@ public class UI_Lobby : UI_Scene
     void Start()
     {
         Init();
+
         if (Managers.Data.IsLoaded)
         {
             PlaySound();
@@ -81,9 +83,11 @@ public class UI_Lobby : UI_Scene
         GetButton((int)Buttons.QuitButton).BindEvent(() => { _quitButtonAnim.SetBool(HOVER, true); GetText((int)Texts.QuitText).DOFontSize(80, 0.25f); }, Define.UIEvent.PointerEnter);
         GetButton((int)Buttons.QuitButton).BindEvent(() => { _quitButtonAnim.SetBool(HOVER, false); GetText((int)Texts.QuitText).DOFontSize(70, 0.25f); }, Define.UIEvent.PointerExit);
 
-        GetButton((int)Buttons.StartButton).gameObject.BindEvent(() => { OnClickedStartButton(); });
-        GetButton((int)Buttons.SettingButton).gameObject.BindEvent(() => { OnClickedSettingButton(); });
-        GetButton((int)Buttons.QuitButton).gameObject.BindEvent(() => { OnClickedExitButton(); });
+        GetButton((int)Buttons.StartButton).BindEvent(OnClickedStartButton);
+        GetButton((int)Buttons.SettingButton).BindEvent(OnClickedSettingButton);
+        GetButton((int)Buttons.QuitButton).BindEvent(OnClickedExitButton);
+
+        GetButton((int)Buttons.CreditButton).BindEvent(() => { Managers.Scene.ChangeScene(Define.Scene.CreditScene); });
 
         Managers.GameManager.OnAppSettingChanged += SetText;
         SetText(null);

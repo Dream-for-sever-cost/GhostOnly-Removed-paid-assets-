@@ -162,6 +162,9 @@ public class UI_Game : UI_Scene
 
     private void SendSoulDataToAnalytics(bool isNight)
     {
+#if DEBUG
+        return;
+#endif
         if (isNight) { return; }
 
         DayStateData dayData = new()

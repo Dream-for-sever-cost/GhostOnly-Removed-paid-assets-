@@ -71,7 +71,6 @@ public class UI_Settings : UI_Popup
         TextStatus,
         TextMinimap,
         TextSetting,
-        LicenseBackText,
     }
 
     private enum GameObjects
@@ -209,7 +208,6 @@ public class UI_Settings : UI_Popup
         GetText((int)Texts.HelpText).text = GetString(Constants.Setting.SETTING_HELP_TEXT);
         GetText((int)Texts.LicenseText).text = GetString(Constants.Setting.SETTING_LICENSE_TEXT);
 
-
         GetText((int)Texts.TextMove).text = GetString(Constants.Setting.SETTING_HELP_MOVE);
         GetText((int)Texts.TextPossess).text = GetString(Constants.Setting.SETTING_HELP_POSSESS);
         GetText((int)Texts.TextEquip).text = GetString(Constants.Setting.SETTING_HELP_EQUIP);
@@ -218,8 +216,6 @@ public class UI_Settings : UI_Popup
         GetText((int)Texts.TextStatus).text = GetString(Constants.Setting.SETTING_HELP_STATUS);
         GetText((int)Texts.TextMinimap).text = GetString(Constants.Setting.SETTING_HELP_MINIMAP);
         GetText((int)Texts.TextSetting).text = GetString(Constants.Setting.SETTING_HELP_SETTING);
-
-        GetText((int)Texts.LicenseBackText).text = GetString(Constants.Setting.SETTING_HELP_BACK);
     }
 
     private void UpdateUI()

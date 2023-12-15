@@ -40,20 +40,21 @@ public class UI_SpellBook : UI_Popup
 
     enum Images
     {
-        A0,
+        A0, A1,
         B0, B1, B2, B3, B4, B5,
-        C0, C1,
+        C0, C1,C2,
         D0, D1,
         E0, E1,
         F0,
-        G0,
+        G0, G1,
+        H0,
         SpellImage,
     }
     #endregion
 
     private void Start()
     {
-        spellBookController = Managers.Resource.Load<GameObject>("Prefabs/Etc/SpellBook").GetComponent<SpellBookController>();
+        spellBookController = Managers.Resource.Load<GameObject>(Constants.Prefabs.SpellBook).GetComponent<SpellBookController>();
         Init();
     }
 
@@ -117,7 +118,7 @@ public class UI_SpellBook : UI_Popup
             UpdateChildSpell(Color.white);
             UpdateActivateSpell();
 
-            Managers.Sound.PlaySound(SoundType.Purchase);
+            Managers.Sound.PlaySound(SoundType.GetSpell);
         }
         else
         {

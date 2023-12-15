@@ -27,6 +27,7 @@ public class GameManager
     public float ghostMoveSpeedCoefficient = 0f;
     public float gravestoneRespawnTimeCoefficient = 0f;
     public float realTime = 0f;
+    public float soulYield = 0f;
 
 
     //=== Game States ===//
@@ -69,6 +70,7 @@ public class GameManager
         ghostMoveSpeedCoefficient = 0f;
         gravestoneRespawnTimeCoefficient = 0f;
         realTime = 0f;
+        soulYield = 0f;
         currentDay = 0;
         currentAlter = 25;
         currentSkullCount = 2;

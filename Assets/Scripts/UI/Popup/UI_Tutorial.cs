@@ -46,7 +46,6 @@ public class UI_Tutorial : UI_Popup
 
     public override bool Init()
     {
-
         if (base.Init() == false)
             return false;
 
@@ -140,7 +139,6 @@ public class UI_Tutorial : UI_Popup
                                 EnemyObject.GetComponent<Scarecrow>().init();
                             }
                         }
-                        break;
                     }
                     else if (j != -1)
                     {

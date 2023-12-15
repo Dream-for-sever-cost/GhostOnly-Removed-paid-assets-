@@ -125,8 +125,7 @@ public class PlayerController : MonoBehaviour
             ControlSkullStartedEvent?.Invoke(false);
             ReleaseSkull();
         }
-
-        if (_collideSkull != null)
+        else if (_collideSkull != null)
         {
             //나중에 실행해서 이벤트 등록하도록 하기위함
             SetSkull(_collideSkull);
@@ -219,7 +218,10 @@ public class PlayerController : MonoBehaviour
         if (Managers.UI.IsPopupUI())
         {
             if (_uiMastery != null)
+            {
+                DOTween.KillAll();
                 Managers.UI.ClosePopupUI(_uiMastery);
+            }
         }
         else
         {

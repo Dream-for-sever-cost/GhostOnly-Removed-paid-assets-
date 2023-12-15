@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
@@ -218,7 +217,9 @@ public class TutorialManager : MonoBehaviour
     {
         Transform UI_Game = GameObject.Find("UI_Game").transform;
 
-        SkipButton = Instantiate(Resources.Load(Constants.Tutorial.SkipButton), UI_Game).GetComponent<Button>();
+        GameObject SkipObject = (GameObject)Instantiate(Resources.Load(Constants.Tutorial.SkipButton), UI_Game);
+
+        SkipButton = SkipObject.GetComponent<Button>();
 
         SkipButton.onClick.AddListener(() => OnSkipButton());
 

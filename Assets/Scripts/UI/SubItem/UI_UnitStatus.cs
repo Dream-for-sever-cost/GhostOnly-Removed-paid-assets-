@@ -17,13 +17,11 @@ public class UI_UnitStatus : MonoBehaviour
     private Dictionary<BuffModel, Image> _buffUIMap;
     public HealthSystem healthSystem;
     public BuffSystem buffSystem;
-    private Dictionary<BuffModel, bool> _animatedFlags;
 
     private void Awake()
     {
         healthSystem = GetComponentInParent<HealthSystem>();
         _buffUIMap = new Dictionary<BuffModel, Image>();
-        _animatedFlags = new Dictionary<BuffModel, bool>();
 
         Rect buffRect = buffContainer.rect;
         buffContainer.localPosition += new Vector3(buffRect.width * 0.5f, buffRect.height);
@@ -164,13 +162,9 @@ public class UI_UnitStatus : MonoBehaviour
             float restTime = buff.LastingTime - elapsedTime;
 
 
-            if (restTime <= Constants.Time.BuffFlickeringTime && !_animatedFlags.GetValueOrDefault(buff, false))
+            if (restTime <= Constants.Time.BuffFlickeringTime )
             {
-                _animatedFlags[buff] = true;
-                //todo refactoring this 
-                buffImage.DOColor(Constants.Colors.Transparent, Constants.Time.AnimationTime)
-                    .SetUpdate(true)
-                    .onComplete = () => { Destroy(buffImage.gameObject); };
+                Destroy(buffImage.gameObject);
                 _buffUIMap.Remove(buff);
             }
             else
