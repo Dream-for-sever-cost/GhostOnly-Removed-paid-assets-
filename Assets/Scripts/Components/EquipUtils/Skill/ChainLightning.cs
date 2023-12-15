@@ -96,7 +96,6 @@ public sealed class ChainLightning : PoolAble
                 
                 if (!_damagedTargets.Contains(damaged))
                 {
-                    Debug.Log("already hit");
                     _curChainCount++;
                     targetDamagable.TakeDamage(_damage);
                     _damagedTargets.Add(damaged);

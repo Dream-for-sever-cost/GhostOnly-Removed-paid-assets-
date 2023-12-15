@@ -31,6 +31,8 @@ namespace Util
             public const string Sun = "Sprites/Sun";
             public const string Icon = "Sprites/UI/Icon";
             public const string Mastery = "Sprites/UI/Mastery";
+            public const string SkullDie = "Sprites/Coffin/Skull";
+            public const string SkullLive = "Sprites/Coffin/Skull_1";
         }
 
         public static class GameSystem
@@ -182,6 +184,15 @@ namespace Util
             public const string LampSkill2 = "lamp_skill2";
             public const string LampSkill2Info = "lamp_skill2_info";
             public const int LampSkill2IconIndex = 19;
+        }
+
+        public static class Mastery
+        {
+            public const string atk = "atk";
+            public const string hp = "hp";
+            public const string critical = "critical";
+            public const string movement_speed = "movement_speed";
+            public const string attack_speed = "attack_speed";
         }
 
         public static class Hero

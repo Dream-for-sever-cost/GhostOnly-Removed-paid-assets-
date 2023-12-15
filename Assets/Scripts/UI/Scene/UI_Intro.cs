@@ -32,6 +32,11 @@ public class UI_Intro : UI_Scene
         IntroStep();  
     }
 
+    private void OnDisable()
+    {
+        DOTween.KillAll(this);
+    }
+
     public override bool Init()
     {
         if (base.Init() == false)
@@ -95,7 +100,7 @@ public class UI_Intro : UI_Scene
 
     public void SkipScene()
     {    
-        DOTween.KillAll(true);
+        DOTween.KillAll(this);
         Managers.Scene.ChangeScene(Define.Scene.LobbyScene);
     }
 

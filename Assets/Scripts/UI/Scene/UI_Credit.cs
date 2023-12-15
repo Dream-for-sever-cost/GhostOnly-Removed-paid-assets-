@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UI_Credit : UI_Scene
 {
     private Sequence _titleSequence;
+    private Sequence _creditSequence;
     private enum Texts
     {
         TitleText,
@@ -20,8 +21,12 @@ public class UI_Credit : UI_Scene
     private void Start()
     {
         Init();
-        DOVirtual.DelayedCall(24f, OnTitle);
-        DOVirtual.DelayedCall(27f, Skip);
+        CreditSequence();
+    }
+
+    private void OnDisable()
+    {
+        DOTween.KillAll(this);
     }
 
     public override bool Init()
@@ -39,9 +44,9 @@ public class UI_Credit : UI_Scene
         return true;
     }
 
-    private void Skip()
+    private void Skip() 
     {
-        DOTween.KillAll();
+        DOTween.KillAll(this);
         Managers.Scene.ChangeScene(Define.Scene.LobbyScene);
     }
 
@@ -56,5 +61,15 @@ public class UI_Credit : UI_Scene
         GameObject title = GetText((int)Texts.TitleText).gameObject;
         _titleSequence = DOTween.Sequence()
             .Append(title.GetComponent<CanvasGroup>().DOFade(1f, 1f));
+    }
+
+    private void CreditSequence()
+    {
+        _creditSequence = DOTween.Sequence()
+            .OnStart(() => 
+            {
+                DOVirtual.DelayedCall(24f, OnTitle);
+                DOVirtual.DelayedCall(27f, Skip);
+            });
     }
 }

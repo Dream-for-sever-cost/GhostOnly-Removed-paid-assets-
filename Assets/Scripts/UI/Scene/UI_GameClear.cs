@@ -20,6 +20,11 @@ public class UI_GameClear : UI_Scene
         GameClearStep();
     }
 
+    private void OnDisable()
+    {
+        DOTween.KillAll(this);
+    }
+
     public override bool Init()
     {
         if (base.Init() == false)

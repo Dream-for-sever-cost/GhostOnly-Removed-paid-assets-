@@ -90,19 +90,18 @@ public class UI_StarCatch : UI_Popup
         HitPoint hit = Get<HitPoint>((int)HitPoints.HitPointImage);
         Animator starAnimation = GetImage((int)Images.StarImage).gameObject.GetComponent<Animator>();
         Button clickButton = GetButton((int)Buttons.StarCatchButton);
-    
+
         ReleaseSoulSequence();
         _starSequence.Pause();
         if (hit.starInputChk)
-        {           
+        {
             SuccessRewardSequence();
             SuccessLampSequence();
             Managers.Soul.GetSoul(_successReward + (int)Managers.GameManager.soulYield);
-            Debug.Log((_successReward, (int)Managers.GameManager.soulYield));
             clickButton.interactable = false;
             GetObject((int)GameObjects.Reward).SetActive(true);
             RewardSet(_successReward + (int)Managers.GameManager.soulYield);
-            DOVirtual.DelayedCall(Constants.Starcatch.ClosePopupTime, Close).SetUpdate(true);       
+            DOVirtual.DelayedCall(Constants.Starcatch.ClosePopupTime, Close).SetUpdate(true);
             Managers.Sound.PlaySound(Data.SoundType.StarcatchSuccess);
         }
         else
@@ -120,26 +119,26 @@ public class UI_StarCatch : UI_Popup
 
     private void Close()
     {
-        DOTween.KillAll();
+        sequenceKill();
         Managers.UI.ClosePopupUI();
     }
 
     private void SetEasy()
-    {     
+    {
         GetImage((int)Images.Soul2Image).gameObject.SetActive(false);
         GetImage((int)Images.Soul3Image).gameObject.SetActive(false);
         GetImage((int)Images.Soul4Image).gameObject.SetActive(false);
     }
 
     private void SetNormal()
-    {      
+    {
         GetImage((int)Images.Soul3Image).gameObject.SetActive(false);
         GetImage((int)Images.Soul4Image).gameObject.SetActive(false);
         GetImage((int)Images.StarCatchDifficultyBGImage).color = Constants.Starcatch.NormalStarcatchColor;
     }
 
     private void SetHard()
-    {      
+    {
         GetImage((int)Images.Soul4Image).gameObject.SetActive(false);
         GetImage((int)Images.StarCatchDifficultyBGImage).color = Constants.Starcatch.HardStarcatchColor;
     }
@@ -216,7 +215,7 @@ public class UI_StarCatch : UI_Popup
     private void FailLampSequence()
     {
         GameObject lamp = GetButton((int)Buttons.StarCatchButton).gameObject;
-        _lampFailSequence = DOTween.Sequence()       
+        _lampFailSequence = DOTween.Sequence()
 
         .Append(lamp.GetComponent<CanvasGroup>().DOFade(0.6f, Constants.Starcatch.FailLampAppendFadeDuration))
         .SetUpdate(true);
@@ -241,7 +240,7 @@ public class UI_StarCatch : UI_Popup
     public void SetOpenSequence()
     {
         GameObject window = GetObject((int)GameObjects.StarCatchBG);
-        _openSequence = DOTween.Sequence()   
+        _openSequence = DOTween.Sequence()
         .OnStart(() =>
         {
             window.SetActive(true);
@@ -258,7 +257,7 @@ public class UI_StarCatch : UI_Popup
         GameObject star = GetImage((int)Images.StarImage).gameObject;
         _starSequence = DOTween.Sequence()
        .Prepend(star.transform.DOLocalMoveX(Constants.Starcatch.StarPrependMoveX, _starSpeed).SetEase(Ease.InOutSine)).SetRelative()
-       .Append(star.transform.DOLocalMoveX(Constants.Starcatch.StarAppendMoveX, _starSpeed).SetEase(Ease.InOutSine)).SetRelative()   
+       .Append(star.transform.DOLocalMoveX(Constants.Starcatch.StarAppendMoveX, _starSpeed).SetEase(Ease.InOutSine)).SetRelative()
        .SetLoops(-1)
        .SetUpdate(true);
     }
@@ -291,7 +290,7 @@ public class UI_StarCatch : UI_Popup
 
         _releaseSoulSequence = DOTween.Sequence()
             .Append(soulBG.GetComponent<CanvasGroup>().DOFade(0, Constants.Starcatch.ReleaseAppendFadeDuration))
-            .SetUpdate(true);   
+            .SetUpdate(true);
     }
 
     public void FailRewardSequence()
@@ -301,15 +300,15 @@ public class UI_StarCatch : UI_Popup
             .SetUpdate(true);
     }
 
-    private void Sequencekill()
+    private void sequenceKill()
     {
-        _successSequence.Kill(true);
-        _lampSequence.Kill(true);
-        _openSequence.Kill(true);
-        _starSequence.Kill(true);
-        _soulSequence.Kill(true);
-        _releaseSoulSequence.Kill(true);
-        _lampFailSequence.Kill(true);
+        _successSequence.Kill();
+        _lampSequence.Kill();
+        _openSequence.Kill();
+        _starSequence.Kill();
+        _soulSequence.Kill();
+        _releaseSoulSequence.Kill();
+        _lampFailSequence.Kill();
     }
 }
 

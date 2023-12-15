@@ -58,6 +58,11 @@ public class UI_SpellBook : UI_Popup
         Init();
     }
 
+    private void OnDisable()
+    {
+        SequenceKill();
+    }
+
     public override bool Init()
     {
         if (base.Init() == false)

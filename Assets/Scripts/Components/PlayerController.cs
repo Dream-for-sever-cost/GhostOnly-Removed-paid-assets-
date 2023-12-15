@@ -219,7 +219,6 @@ public class PlayerController : MonoBehaviour
         {
             if (_uiMastery != null)
             {
-                DOTween.KillAll();
                 Managers.UI.ClosePopupUI(_uiMastery);
             }
         }

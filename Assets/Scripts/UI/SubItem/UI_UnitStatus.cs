@@ -58,6 +58,7 @@ public class UI_UnitStatus : MonoBehaviour
 
     private void OnDisable()
     {
+        DOTween.Kill(hpGage);
         if (healthSystem != null)
         {
             healthSystem.OnGettingDamageEvent -= ChangeHpBar;
@@ -162,7 +163,7 @@ public class UI_UnitStatus : MonoBehaviour
             float restTime = buff.LastingTime - elapsedTime;
 
 
-            if (restTime <= Constants.Time.BuffFlickeringTime )
+            if (restTime <= Constants.Time.BuffFlickeringTime)
             {
                 Destroy(buffImage.gameObject);
                 _buffUIMap.Remove(buff);
@@ -180,7 +181,10 @@ public class UI_UnitStatus : MonoBehaviour
         foreach ((BuffModel _, Image ui) in _buffUIMap)
         {
             //todo optimize to use object pool
-            Destroy(ui.gameObject);
+            if (ui != null)
+            {
+                Destroy(ui.gameObject);
+            }
         }
 
         _buffUIMap.Clear();

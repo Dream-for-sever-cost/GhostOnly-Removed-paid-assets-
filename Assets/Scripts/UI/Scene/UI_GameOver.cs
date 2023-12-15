@@ -19,7 +19,6 @@ public class UI_GameOver : UI_Scene
     }
 
     private Sequence _textSequence;
-    private Sequence _scene2Sequence;
     private TextMeshProUGUI _text;
     private string _inputText;
     private int _die = Animator.StringToHash(Constants.AniParams.Die);
@@ -30,6 +29,11 @@ public class UI_GameOver : UI_Scene
         Init();
         GameOverStep();
     }
+    private void OnDisable()
+    {
+        DOTween.KillAll(this);
+    }
+
     public override bool Init()
     {
         if (base.Init() == false)

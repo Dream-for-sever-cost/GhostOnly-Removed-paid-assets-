@@ -93,6 +93,6 @@ public class UI_CoffinItem : UI_Base
 
     private void OnDisable()
     {
-        _itemHoverSequence.Kill(true);
+        _itemHoverSequence.Kill();
     }
 }

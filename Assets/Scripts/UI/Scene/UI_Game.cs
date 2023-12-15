@@ -152,6 +152,7 @@ public class UI_Game : UI_Scene
 
     private void OnDestroy()
     {
+        SequenceKill();
         Managers.GameManager.Player.ControlSkullStartedEvent -= UpdateUIBySkullStartedControl;
         Managers.GameManager.OnAppSettingChanged -= SetMinimapPosition;
         Managers.GameManager.OnChangeSkullCount -= UpdateSkullCountUI;
@@ -496,5 +497,11 @@ public class UI_Game : UI_Scene
         {
             HideSkillTooltip();
         }
+    }
+
+    private void SequenceKill()
+    {
+        _hpBarSequence.Kill();
+        _soulTextSequence.Kill();
     }
 }

@@ -279,7 +279,6 @@ public class UI_Settings : UI_Popup
     private void Exit()
     {
 #if UNITY_EDITOR
-        Debug.Log("종료되었습니다.");
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
 

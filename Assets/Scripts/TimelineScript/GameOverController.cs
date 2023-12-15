@@ -22,6 +22,11 @@ public class GameOverController : MonoBehaviour
         GameOverStep();
     }
 
+    private void OnDisable()
+    {
+        DOTween.KillAll(this);
+    }
+
     private void SetGhostMove()
     {
         ghost.SetBool(_move, true);
@@ -56,7 +61,7 @@ public class GameOverController : MonoBehaviour
             SetAltarFail();   
             SetHeroMove();
             DOVirtual.DelayedCall(2f, SetGhostMove);
-            DOVirtual.DelayedCall(4f, SetHeroStop);
+            DOVirtual.DelayedCall(2.7f, SetHeroStop);
         });
     }
 }

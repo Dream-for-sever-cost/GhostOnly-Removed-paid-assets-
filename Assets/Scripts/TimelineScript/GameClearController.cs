@@ -24,6 +24,11 @@ public class GameClearManager : MonoBehaviour
         GameClearStep();
     }
 
+    private void OnDisable()
+    {
+        DOTween.KillAll(this);
+    }
+
     private void GameClearStep()
     {
         SetAltarIdle();

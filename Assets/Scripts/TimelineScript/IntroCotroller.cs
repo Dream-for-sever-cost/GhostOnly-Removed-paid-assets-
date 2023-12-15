@@ -18,6 +18,11 @@ public class IntroCotroller : MonoBehaviour
         IntroPhase();
     }
 
+    private void OnDisable()
+    {
+        DOTween.KillAll(this);
+    }
+
     private void OnAnimatorMove()
     {
         foreach (Animator hero in animator)
@@ -42,7 +47,7 @@ public class IntroCotroller : MonoBehaviour
         {
             DOVirtual.DelayedCall(15f, OnAnimatorMove, false);
             DOVirtual.DelayedCall(23f, OnAnimatorSkulPossess, false);
-            DOVirtual.DelayedCall(24.4f, OnAnimatorSkulMove, false);
+            DOVirtual.DelayedCall(24f, OnAnimatorSkulMove, false);
         });
     } 
 }

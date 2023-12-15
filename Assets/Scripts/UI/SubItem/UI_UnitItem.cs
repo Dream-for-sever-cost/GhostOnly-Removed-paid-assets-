@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Util;
 
 public class UI_UnitItem : UI_Base
 {
@@ -43,7 +44,6 @@ public class UI_UnitItem : UI_Base
         }
 
         UpdateUI();
-        Debug.Log("Set skull");
     }
 
     public void SetOnClickListener(Action<SkullStateMachine> onClick)
@@ -57,8 +57,8 @@ public class UI_UnitItem : UI_Base
         if (_skull == null) { return; }
 
         Sprite sprite = _skull.HealthSystem.IsDeath()
-            ? Resources.Load<Sprite>("Sprites/Coffin/Skull")
-            : Resources.Load<Sprite>("Sprites/Coffin/Skull_1");
+            ? Resources.Load<Sprite>(Constants.Sprites.SkullDie)
+            : Resources.Load<Sprite>(Constants.Sprites.SkullLive);
         _unitImage.sprite = sprite;
 
         //todo color change ...

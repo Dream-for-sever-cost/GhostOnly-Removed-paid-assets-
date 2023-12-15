@@ -46,9 +46,7 @@ public sealed class BuffSystem : MonoBehaviour
     }
 
     private void ClearBuffs()
-    {
-        Debug.Log("ClearBuff");
-        
+    {        
         for (int i = 0; i < _buffs.Count; i++)
         {
             _removed.Add(_buffs[i].Buff.Type);
@@ -66,7 +64,6 @@ public sealed class BuffSystem : MonoBehaviour
     public void AddBuff(BuffModel buff)
     {
         if (_healthSystem.IsDeath()) { return;}
-        Debug.Log($"AddBuff :{buff.Type}");
         if (_buffTypes.TryGetValue(buff.Type, out BuffModel.BuffType buffType))
         {
             int idx = _buffs.FindIndex((timer) => timer.Buff.Type == buffType);
@@ -103,7 +100,6 @@ public sealed class BuffSystem : MonoBehaviour
 
     public void RemoveBuff(BuffModel.BuffType type)
     {
-        Debug.Log($"RemoveBuff :{type}");
         int idx = _buffs.FindIndex((buffTimer) => buffTimer.Buff.Type == type);
         if (idx == -1)
         {

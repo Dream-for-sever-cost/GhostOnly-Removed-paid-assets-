@@ -35,6 +35,11 @@ public class AltarController : MonoBehaviour, IDamagable
         interactNPC.EventInteract.AddListener(FillSoul);    
     }
 
+    private void OnDisable()
+    {
+        _damageSequence.Kill();
+    }
+
     public void FillSoul()
     {
         if (!soulManager.CheckSoul(Constants.GameSystem.AlterDevote * 10))
@@ -48,7 +53,7 @@ public class AltarController : MonoBehaviour, IDamagable
 
         if (IsDeath())
         {
-            DOTween.KillAll(true);
+            DOTween.KillAll();
             GetResultData();
             gameManager.GameClear();
         }
@@ -68,7 +73,7 @@ public class AltarController : MonoBehaviour, IDamagable
         if (gameManager.currentAlter <= 0)
         {
             gameManager.currentAlter = 0;
-            DOTween.KillAll(true);
+            DOTween.KillAll();
             GetResultData();
             gameManager.GameOver();
 

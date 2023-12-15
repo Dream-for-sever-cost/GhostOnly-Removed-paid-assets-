@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 using Text = TMPro.TextMeshProUGUI;
@@ -13,11 +14,22 @@ namespace UI.SubItem
         private float _timeSinceStarted = 0f;
         private float _damage;
         private Color _color;
+        private Sequence _damageSequence;
         public Transform damageTransform;
 
         private void Awake()
         {
             _damageText = GetComponentInChildren<Text>();
+        }
+
+        private void OnEnable()
+        {
+            DamageSequence();
+        }
+
+        private void OnDisable()
+        {
+            _damageSequence.Kill();
         }
 
         public void SetDamage(int damage, Color color)
@@ -51,6 +63,17 @@ namespace UI.SubItem
             damageText.transform.position = new Vector3(pos.x + randomPos, pos.y + randomPos, pos.z);
             damageText.SetDamage(damage.ToInt(), color);
             return damageText;
+        }
+
+        private void DamageSequence()
+        {
+            _damageSequence = DOTween.Sequence()
+          .OnStart(() =>
+          {
+              GetComponent<CanvasGroup>().alpha = 1.0f;
+          })
+          .Append(GetComponent<CanvasGroup>().DOFade(0, 1f))
+          .Join(transform.DOLocalMoveY(1, 1f).SetRelative());
         }
     }
 }

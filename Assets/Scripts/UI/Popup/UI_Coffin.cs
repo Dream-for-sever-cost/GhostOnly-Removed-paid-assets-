@@ -56,6 +56,11 @@ public class UI_Coffin : UI_Popup
         Init();
     }
 
+    private void OnDisable()
+    {
+        SequenceKill();
+    }
+
     public override bool Init()
     {
         if (!base.Init())
@@ -163,17 +168,9 @@ public class UI_Coffin : UI_Popup
 
        
         _hoveredItem.TurnOnHightlightItem();
-        switch (PreferencesManager.GetLanguage())
-        {
-            case Language.KOREAN:
-                GetText((int)Texts.NameTxt).text = Managers.Data.I18nDic[_hoveredItem.coffinData.name].kr;
-                GetText((int)Texts.ExplanationTxt).text = Managers.Data.I18nDic[_hoveredItem.coffinData.explanation].kr;
-                break;
-            case Language.ENGLISH:
-                GetText((int)Texts.NameTxt).text = Managers.Data.I18nDic[_hoveredItem.coffinData.name].en;
-                GetText((int)Texts.ExplanationTxt).text = Managers.Data.I18nDic[_hoveredItem.coffinData.explanation].en;
-                break;
-        }
+        
+        GetText((int)Texts.NameTxt).text = GetString(_hoveredItem.coffinData.name);
+        GetText((int)Texts.ExplanationTxt).text = GetString(_hoveredItem.coffinData.explanation);
 
         int price;
         if(_hoveredItem.coffinData.type == CoffinType.Skull)
@@ -273,15 +270,7 @@ public class UI_Coffin : UI_Popup
     
     private void WarningTextOpen(string warningText)
     {
-        switch(PreferencesManager.GetLanguage())
-        {
-            case Language.KOREAN:
-                GetText((int)Texts.WarningText).text = Managers.Data.I18nDic[warningText].kr;
-                break;
-            case Language.ENGLISH:
-                GetText((int)Texts.WarningText).text = Managers.Data.I18nDic[warningText].en;
-                break;
-        }
+        GetText((int)Texts.WarningText).text = GetString(warningText);
         GetText((int)Texts.WarningText).gameObject.SetActive(true);
     }
 
@@ -292,22 +281,9 @@ public class UI_Coffin : UI_Popup
 
     private void SetPurchaseText()
     {
-        switch (PreferencesManager.GetLanguage())
-        {
-            case Language.KOREAN:
-                GetText((int)Texts.CheckPurchaseText).text = $"{Managers.Data.I18nDic[_selectedItem.coffinData.name].kr} {Managers.Data.I18nDic[Constants.Coffin.COFFIN_CHECK_PURCHASE].kr}";
-                GetText((int)Texts.PurchaseText).text = Managers.Data.I18nDic[Constants.Coffin.COFFIN_PURCHASE].kr;
-                GetText((int)Texts.CancelText).text = Managers.Data.I18nDic[Constants.Coffin.COFFIN_CANCEL].kr;
-                break;
-            case Language.ENGLISH:
-                Debug.Log(Constants.Coffin.COFFIN_CHECK_PURCHASE);
-                Debug.Log(Managers.Data.I18nDic[Constants.Coffin.COFFIN_CHECK_PURCHASE].en);
-                Debug.Log(_selectedItem.coffinData.name);
-                GetText((int)Texts.CheckPurchaseText).text = $"{Managers.Data.I18nDic[Constants.Coffin.COFFIN_CHECK_PURCHASE].en} {Managers.Data.I18nDic[_selectedItem.coffinData.name].en}?";
-                GetText((int)Texts.PurchaseText).text = Managers.Data.I18nDic[Constants.Coffin.COFFIN_PURCHASE].en;
-                GetText((int)Texts.CancelText).text = Managers.Data.I18nDic[Constants.Coffin.COFFIN_CANCEL].en;
-                break;
-        }
+        GetText((int)Texts.CheckPurchaseText).text = $"{GetString(_selectedItem.coffinData.name)} {GetString(Constants.Coffin.COFFIN_CHECK_PURCHASE)}";
+        GetText((int)Texts.PurchaseText).text = GetString(Constants.Coffin.COFFIN_PURCHASE);
+        GetText((int)Texts.CancelText).text = GetString(Constants.Coffin.COFFIN_CANCEL);
     }
 
     private void PurchaseRandom()

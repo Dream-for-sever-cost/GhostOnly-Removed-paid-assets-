@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UI.SubItem;
 using UnityEngine;
+using Util;
 
 public sealed class SlaveMasteryController : MonoBehaviour
 {
@@ -228,7 +229,6 @@ public sealed class SlaveMasteryController : MonoBehaviour
                     break;
                 case Mastery.MasteryEffectType.OnHitEffect:
                     _effects.Add(effect);
-                    Debug.Log("OnHit Effect");
                     break;
                 case Mastery.MasteryEffectType.AuraEffect:
                     _effects.Add(effect);
@@ -291,19 +291,17 @@ public sealed class SlaveMasteryController : MonoBehaviour
             Managers.Sound.PlaySound(Data.SoundType.PurchaseFail);
             OnFailedToBuyEvent?.Invoke();
         }
-
-        Debug.Log($"BuyStats - statsType: {statsType}, result : {canBuy}");
     }
 
     private string ToStatusHeader(UI_Mastery.StatusType type)
     {
         return type switch
         {
-            UI_Mastery.StatusType.Atk => "atk",
-            UI_Mastery.StatusType.MaxHp => "hp",
-            UI_Mastery.StatusType.CriticalRate => "critical",
-            UI_Mastery.StatusType.MovementSpd => "movement_speed",
-            UI_Mastery.StatusType.ActionDelay => "attack_speed",
+            UI_Mastery.StatusType.Atk => Constants.Mastery.atk,
+            UI_Mastery.StatusType.MaxHp => Constants.Mastery.hp,
+            UI_Mastery.StatusType.CriticalRate => Constants.Mastery.critical,
+            UI_Mastery.StatusType.MovementSpd => Constants.Mastery.movement_speed,
+            UI_Mastery.StatusType.ActionDelay => Constants.Mastery.attack_speed,
             _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
         };
     }

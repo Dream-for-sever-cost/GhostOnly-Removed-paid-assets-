@@ -113,6 +113,11 @@ public sealed class UI_Mastery : UI_Popup
     private Sequence _mainOpenButtonSequence;
     private Sequence _subOpenButtonSequence;
 
+    private void OnDisable()
+    {
+        SequenceKill();    
+    }
+
     public override bool Init()
     {
         Bind<RectTransform>(typeof(MasteryRectTransforms));
@@ -159,14 +164,13 @@ public sealed class UI_Mastery : UI_Popup
         return true;
     }
 
-
     private void UpdateUI()
     {
         //Title, Subtitles, Etc -> Localization
         //GetText((int)MasteryTexts.TitleText).text = GetString(Constants.StringRes.ResIdStatus);
         //GetText((int)MasteryTexts.Status).text = GetString(Constants.StringRes.ResIdAbility);
         //GetText((int)MasteryTexts.Mastery).text = GetString(Constants.StringRes.ResIdMastery);
-        DOTween.KillAll();
+        SequenceKill();
         GetButton((int)MasteryButtons.MainOpenButton).gameObject.SetActive(!_isMainOpened);
         GetButton((int)MasteryButtons.SubOpenButton).gameObject.SetActive(!_isSubOpened);
         GetImage((int)MasteryImages.MainMasteryBorderImage).gameObject.SetActive(_isMainOpened);
@@ -615,7 +619,6 @@ public sealed class UI_Mastery : UI_Popup
 
     private void ShowMainMastery()
     {
-        Debug.Log("show main mastery");
         Rect iconRect = GetImage((int)MasteryImages.MainMasteryBorderImage).rectTransform.rect;
         float x = iconRect.xMax;
         float y = iconRect.yMax + Constants.Padding.PaddingNormal;
@@ -624,13 +627,11 @@ public sealed class UI_Mastery : UI_Popup
 
     private void HideMainMastery()
     {
-        Debug.Log("hide main mastery");
         SetMasteryTooltipVisibility(null, Vector2.zero, false);
     }
 
     private void ShowSubMastery()
     {
-        Debug.Log("show sub mastery");
         Rect iconRect = GetImage((int)MasteryImages.SubMasteryBorderImage).rectTransform.rect;
         float x = iconRect.xMax;
         float y = iconRect.yMax + Constants.Padding.PaddingLarge;
@@ -639,7 +640,6 @@ public sealed class UI_Mastery : UI_Popup
 
     private void HideSubMastery()
     {
-        Debug.Log("hide sub mastery");
         SetMasteryTooltipVisibility(null, Vector2.zero, false);
     }
 

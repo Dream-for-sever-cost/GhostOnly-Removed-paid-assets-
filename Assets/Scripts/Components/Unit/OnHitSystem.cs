@@ -61,7 +61,6 @@ public sealed class OnHitSystem : MonoBehaviour
 
     private void CreateOnHitEffects(Collider2D other)
     {
-        Debug.Log("OnHitEffect called");
         foreach (OnHit onHit in _onHits)
         {
             float random = Random.Range(0, 1f);
@@ -110,7 +109,6 @@ public sealed class OnHitSystem : MonoBehaviour
 
     private void CreateChainLightning(OnHit onHit, Vector3 createdPosition)
     {
-        Debug.Log($"Create chainLightning : {onHit.PoolType}");
         Enum.TryParse(onHit.PoolType, out PoolType enumPoolType);
         GameObject effect = ObjectPoolManager.Instance.GetGo(enumPoolType);
         ChainLightning chainLightning = effect.GetComponent<ChainLightning>();
