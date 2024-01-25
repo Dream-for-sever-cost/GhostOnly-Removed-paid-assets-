@@ -161,4 +161,4 @@
 - **둥근모 글꼴**
     - [show-homepage](https://neodgm.dalgona.dev/index.html)
     - [show-license](https://github.com/neodgm/neodgm/blob/51aaf6e273a9bd9f9f01d647e65e572da7181128/LICENSE.txt#L1-L97)
-    - SIL Open Font License 1.1
+    - SIL Open Font License 1.1 
